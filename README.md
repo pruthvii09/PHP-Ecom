@@ -1,6 +1,6 @@
 # E-Commerce Website
 
-Welcome to our E-Commerce Website! This platform allows users to browse and purchase a wide range of products. It includes features such as user authentication, shopping cart management, secure payment processing, and order tracking.
+Welcome to our E-Commerce Website! This platform allows users to browse and purchase a wide range of products. It includes features such as user authentication, shopping cart management, admin panel, and order tracking.
 
 ## Table of Contents
 
@@ -9,7 +9,6 @@ Welcome to our E-Commerce Website! This platform allows users to browse and purc
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-  - [Running the Project](#running-the-project)
 - [Usage](#usage)
   - [User Authentication](#user-authentication)
   - [Browsing Products](#browsing-products)
