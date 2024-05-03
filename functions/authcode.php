@@ -41,7 +41,7 @@ if (isset($_POST['register_btn'])) {
         exit(); // Added to prevent further execution
     }
 
-    $login_query = $conn->prepare("SELECT name, email, role_as FROM users WHERE email=? AND password=?");
+    $login_query = $conn->prepare("SELECT id, name, email, role_as FROM users WHERE email=? AND password=?");
     $login_query->bind_param('ss', $email, $password);
     $login_query_run = $login_query->execute();
 
@@ -55,13 +55,14 @@ if (isset($_POST['register_btn'])) {
 
     if ($login_query_result->num_rows > 0) {
         $user_data = $login_query_result->fetch_assoc(); // Fetch associative array
-
+        error_log(print_r($user_data, true));
+        $user_id = $user_data['id'];
         $username = $user_data['name'];
         $useremail = $user_data['email'];
         $role_as = $user_data['role_as'];
-
         $_SESSION['auth'] = true;
         $_SESSION['auth_user'] = [
+            'user_id' => $user_id,
             'name' => $username,
             'email' => $useremail,
         ];

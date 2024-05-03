@@ -45,6 +45,18 @@ function getAllProdBycategory($category)
     $query = "SELECT * FROM products WHERE category_id='$category' AND status='0'";
     return $query_run = mysqli_query($conn, $query);
 }
+function getCartItems()
+{
+    global $conn;
+    $userId = $_SESSION['auth_user']['user_id'];
+    $query = "SELECT c.id as cid, c.prod_id, p.id as pid, c.prod_qty, p.name, p.image, p.selling_price
+              FROM carts c
+              INNER JOIN products p ON c.prod_id = p.id
+              WHERE c.user_id = '$userId'
+              ORDER BY c.id DESC";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;

@@ -16,6 +16,9 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link active" href='categories.php'>Collections</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href='cart.php'>Cart</a>
+                </li>
                 <?php
                 if ($_SESSION['auth']) {
                 ?>
