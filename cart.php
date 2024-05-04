@@ -65,6 +65,9 @@ include('authenticate.php')
                     ?>
                 </div>
             </div>
+            <div class="float-end">
+                <a href="checkout.php" class="btn btn-outline-primary">Checkout</a>
+            </div>
         </div>
     </div>
 </div>

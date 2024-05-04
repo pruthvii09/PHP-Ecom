@@ -116,7 +116,7 @@ if (isset($_POST['add_category_btn'])) {
     $stmt->bind_param("isssssssssiiis", $category_id, $name, $slug, $small_description, $description, $orignal_price, $selling_price, $qty, $meta_title, $meta_description, $meta_keywords, $status, $trending, $filename);
 
     if ($stmt->execute()) {
-        move_uploaded_file($_FILES['image']['tmp_name'], $path . $filename);
+        move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $filename);
         redirect('add-product.php', 'Product Added');
     } else {
         redirect('add-product.php', 'Something Went Wrong');
