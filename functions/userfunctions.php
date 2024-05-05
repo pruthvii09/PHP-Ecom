@@ -57,6 +57,14 @@ function getCartItems()
     $query_run = mysqli_query($conn, $query);
     return $query_run;
 }
+function getOrders()
+{
+    global $conn;
+    $userId = $_SESSION['auth_user']['user_id'];
+    $query = "SELECT * FROM orders WHERE user_id='$userId'";
+    $query_run = mysqli_query($conn, $query);
+    return $query_run;
+}
 function redirect($url, $message)
 {
     $_SESSION['message'] = $message;
